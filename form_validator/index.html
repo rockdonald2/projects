@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+            content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible"
+            content="ie=edge">
+        <title>Form-Validator</title>
+        <link rel="stylesheet"
+            href="css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Martel+Sans:300,400,600&display=swap"
+            rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="box">
+            <h1 class="box__header">Register with Us</h1>
+            <form class="box__form" id="form">
+                <div class="input">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Enter username">
+                    <small id="err">Error message</small>
+                </div>
+                <div class="input">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" placeholder="Enter email">
+                    <small id="err">Error message</small>
+                </div>
+                <div class="input">
+                    <label for="pwd">Password</label>
+                    <input type="password" id="pwd" placeholder="Enter password">
+                    <small id="err">Error message</small>
+                </div>
+                <div class="input">
+                    <label for="pwd2">Confirm Password</label>
+                    <input type="password" id="pwd2" placeholder="Enter password again">
+                    <small id="err">Error message</small>
+                </div>
+                <button type="submit" id="submit">Submit</button>
+            </form>
+        </div>
+    </body>
+
+
+    <script src="js/main.js"></script>
+</html>
