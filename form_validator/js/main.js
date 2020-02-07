@@ -32,6 +32,11 @@ function checkRequired(inputArr) {
 }
 
 function checkLength(elem, min, max) {
+    if (elem.value.length == 0) {
+        showError(elem, `${getFieldName(elem)} is required`);
+        return;
+    }
+
     if (elem.value.length < min) {
         showError(elem, `${getFieldName(elem)} must be at least ${min} characters long`)
     } else if (elem.value.length > max) {
@@ -42,6 +47,11 @@ function checkLength(elem, min, max) {
 }
 
 function checkEmail(elem) {
+    if (elem.value.length == 0) {
+        showError(elem, `${getFieldName(elem)} is required`);
+        return;
+    }
+
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
     if (re.test(elem.value.trim())) {
