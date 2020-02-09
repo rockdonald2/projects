@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+            content="width=device-width, initial-scale=1.0">
+        <title>Hangman Game</title>
+        <link rel="stylesheet"
+            href="css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap"
+            rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="curtain" id="curtain"></div>
+
+        <h1 class="heading">Hangman</h1>
+        <p class="para">Find the hidden word - There are 2 given letters - Enter a letter on your keyboard</p>
+
+        <div class="hangman-container">
+            <svg height="250"
+                width="200"
+                class="hangman-container__figure">
+                <!-- Rod -->
+                <line x1="60"
+                    y1="20"
+                    x2="140"
+                    y2="20"></line>
+                <line x1="140"
+                    y1="20"
+                    x2="140"
+                    y2="50"></line>
+                <line x1="60"
+                    y1="20"
+                    x2="60"
+                    y2="230"></line>
+                <line x1="20"
+                    y1="230"
+                    x2="100"
+                    y2="230"></line>
+
+                <!-- Head -->
+                <circle cx="140"
+                    cy="70"
+                    r="20"
+                    class="hangman-container__figure--part"
+                    style="display: none;" id="head"></circle>
+                <!-- Body -->
+                <line x1="140"
+                    y1="90"
+                    x2="140"
+                    y2="150"
+                    class="hangman-container__figure--part"
+                    style="display: none;" id="body"></line>
+                <!-- Arms -->
+                <line x1="140"
+                    y1="120"
+                    x2="120"
+                    y2="100"
+                    class="hangman-container__figure--part"
+                    style="display: none;" id="arml"></line>
+                <line x1="140"
+                    y1="120"
+                    x2="160"
+                    y2="100"
+                    class="hangman-container__figure--part"
+                    style="display: none;" id="armr"></line>
+                <!-- Legs -->
+                <line x1="140"
+                    y1="150"
+                    x2="120"
+                    y2="180"
+                    class="hangman-container__figure--part"
+                    style="display: none;" id="legl"></line>
+                <line x1="140"
+                    y1="150"
+                    x2="160"
+                    y2="180"
+                    class="hangman-container__figure--part"
+                    style="display: none;" id="legr"></line>
+            </svg>
+            <div class="hangman-container__wrong">
+                <p style="opacity: 0;" id="wrong">Wrong</p>
+                <span style="opacity: 0;" id="wrongWords"></span>
+            </div>
+            <div class="hangman-container__word" id="word">
+                <span class="hangman-container__word--letter"></span>
+                <span class="hangman-container__word--letter"></span>
+                <span class="hangman-container__word--letter"></span>
+                <span class="hangman-container__word--letter"></span>
+                <span class="hangman-container__word--letter"></span>
+                <span class="hangman-container__word--letter"></span>
+                <span class="hangman-container__word--letter"></span>
+                <span class="hangman-container__word--letter"></span>
+            </div>
+        </div>
+
+        <div class="popup-container" id="popup">
+            <p class="popup-container__msg">
+                Unfortunately, You lost! 😕
+            </p>
+            <button class="popup-container__reset" id="reset">
+                Play Again
+            </button>
+        </div>
+
+        <div class="notification-container" id="notification">
+            <p class="notification-container__msg">You have already entered that letter</p>
+        </div>
+
+        <script src="js/main.js"></script>
+    </body>
+
+</html>
