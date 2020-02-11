@@ -19,6 +19,8 @@ const searchContainer = document.querySelector('.search-result');
 const searchHeading = document.querySelector('#searchHeading');
 
 function randomMeal() {
+    searchContainer.style.display = 'none';
+
     fetch('https://www.themealdb.com/api/json/v1/1/random.php').then((promise) => {
         return promise.json();
     }).then((meal) => {
@@ -63,19 +65,17 @@ function search(e) {
                 searchHeading.innerHTML = `Search result for '${term}':`;
 
                 for (let i = 0; i < meals['meals'].length; i++) {
-                    let img = document.createElement('img');
-                    img.src = meals['meals'][i]['strMealThumb'];
-                    let h3 = document.createElement('h3');
-                    h3.innerHTML = meals['meals'][i]['strMeal'];
-                    let div = document.createElement('div');
-                    div.className = 'search-result__meals--meal--info';
-                    div.appendChild(h3);
+                    let innerHtml = `<img src="${meals['meals'][i]['strMealThumb']}"
+                        alt="Meal picture">
+                    <div class="search-result__meals--meal--info">
+                        <h3>${meals['meals'][i]['strMeal']}</h3>
+                    </div>`;
                     let container = document.createElement('div');
                     container.className = 'search-result__meals--meal';
-                    container.appendChild(img);
-                    container.appendChild(div);
                     container.dataset.mealId = meals['meals'][i]['idMeal'];
                     container.onclick = displaySearch;
+                    container.innerHTML = innerHtml;
+
                     searchResults.appendChild(container);
                 }
 
@@ -86,14 +86,14 @@ function search(e) {
                 searchContainer.style.display = 'block';
             }
         });
+    } else {
+        alert('You must first enter a keyword to search');
     }
 }
 
 randomBtn.addEventListener('click', randomMeal);
 
 function updateMealDOM(meal) {
-    searchContainer.style.display = 'none';
-
     mealName.innerHTML = meal['strMeal'];
     mealPicture.src = meal['strMealThumb'];
     mealCategory.innerHTML = meal['strCategory'];
@@ -101,13 +101,10 @@ function updateMealDOM(meal) {
     mealPrep.innerHTML = meal['strInstructions'];
 
     mealIngredients.innerHTML = '';
-
     for (let i = 1; i < 20; ++i) {
         if (meal[`strIngredient${i}`]) {
-            let ingredient = document.createElement('span');
-            ingredient.className = 'meal__ingredients--ingredient';
-            ingredient.innerHTML = `${meal[`strIngredient${i}`]} - ${meal[`strMeasure${i}`]}`;
-            mealIngredients.appendChild(ingredient);
+            let html = `<span class="meal__ingredients--ingredient">${meal[`strIngredient${i}`]} - ${meal[`strMeasure${i}`]}</span>`;
+            mealIngredients.innerHTML += html;
         } else {
             break;
         }
