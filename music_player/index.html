@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+            content="width=device-width, initial-scale=1.0">
+        <title>Music Player</title>
+        <link rel="stylesheet"
+            href="css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+    </head>
+
+    <body>
+        <h1 class="heading">Music Player</h1>
+        <div class="player" id="player">
+            <div class="player__info" id="playerInfo">
+                <h2 class="player__info--title" id="title">Summer</h2>
+                <div class="player__info--progress" id="progress">
+                    <div class="player__info--progress--played" id="played"></div>
+                </div>
+            </div>
+            <audio src="music/summer.mp3" id="music"></audio>
+            <div class="player__img">
+                <img src="img/summer.jpg" alt="Cover image" class="player__img--cover" id="cover">
+            </div>
+            <div class="player__navigation">
+                <button class="player__navigation--prev" id="prev"><i class="fas fa-backward"></i></button>
+                <button class="player__navigation--play" id="play"><i class="fas fa-play"></i></button>
+                <button class="player__navigation--next" id="next"><i class="fas fa-forward"></i></button>
+            </div>
+        </div>
+
+        <script src="js/main.js"></script>
+    </body>
+
+</html>

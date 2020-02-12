@@ -1,0 +1,122 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+  outline: none; }
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box; }
+
+body {
+  font-family: 'Lato', sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(0deg, #f7f7f7 23.8%, #fcdddd 92%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+
+.heading {
+  font-size: 3.2rem;
+  margin-bottom: 10rem;
+  text-shadow: 2px 10px 5px rgba(0, 0, 0, 0.1); }
+
+.player {
+  width: 500px;
+  height: 100px;
+  border-radius: 20px;
+  background-color: #fff;
+  position: relative;
+  box-shadow: 0px 15px 15px 0px rgba(252, 169, 169, 0.6); }
+  .player__info {
+    width: 90%;
+    height: 50px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding-left: 30%;
+    padding-top: 0.75rem;
+    opacity: 0;
+    transition: all .35s ease-in-out; }
+    .player__info--title {
+      margin-bottom: .5rem;
+      opacity: 0;
+      transition: all .35s ease-in-out; }
+    .player__info--progress {
+      width: 90%;
+      height: 5px;
+      background-color: #ccc;
+      border-radius: 5px;
+      opacity: 0;
+      cursor: pointer;
+      transition: all .35s ease-in-out; }
+      .player__info--progress--played {
+        background-color: #fe8daa;
+        height: 5px;
+        width: 0%;
+        border-radius: 5px;
+        transition: all .35s ease-in-out; }
+  .player__img {
+    position: absolute;
+    height: 96px;
+    width: 96px;
+    top: -2.5rem;
+    left: 5rem; }
+    .player__img--cover {
+      height: 100%;
+      width: 100%;
+      border-radius: 50%;
+      animation: rotate 3s linear infinite;
+      animation-play-state: paused; }
+    .player__img::after {
+      content: '';
+      background-color: #fff;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: block;
+      z-index: 2; }
+  .player__navigation {
+    margin-left: 40%;
+    transform: translateY(-2.5rem); }
+    .player__navigation--prev, .player__navigation--play, .player__navigation--next {
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+      color: rgba(153, 153, 153, 0.4);
+      text-shadow: 2px 4px 5px rgba(0, 0, 0, 0.1); }
+    .player__navigation--prev {
+      font-size: 2.8rem;
+      margin-right: 5rem; }
+    .player__navigation--play {
+      font-size: 4rem;
+      margin-right: 5rem; }
+    .player__navigation--next {
+      font-size: 2.8rem; }
+
+.player.playing .player__img--cover {
+  animation-play-state: running; }
+
+.player.playing .player__info {
+  transform: translateY(-5rem);
+  opacity: 1; }
+
+.player__info.playing .player__info--title {
+  opacity: 1; }
+
+.player__info.playing .player__info--progress {
+  opacity: 1; }
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
