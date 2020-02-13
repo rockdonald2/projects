@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+            content="width=device-width, initial-scale=1.0">
+        <title>Typing Game</title>
+        <link rel="stylesheet"
+            href="css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+            integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ="
+            crossorigin="anonymous">
+    </head>
+
+    <body>
+        <div class="settings-dropdown" id="settings">
+            <form class="settings-dropdown__form">
+                <label for="difficulty" class="settings-dropdown__form--label">Difficulty</label>
+                <select id="difficulty" class="settings-dropdown__form--select">
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </form>
+        </div>
+
+        <div class="settings-btn">
+            <button id="settings-btn"><i class="fas fa-cog"></i></button>
+        </div>
+
+        <div class="container" id="container">
+            <h2 class="container__heading">👩‍💻 Speed Typer 👨‍💻</h2>
+            <div class="container__timeAscore">
+                <small class="container__timeAscore--time">Time left: <span id="timeleft">10</span>s</small>
+                <small class="container__timeAscore--score">Score: <span id="score">0</span></small>
+            </div>
+            <small class="container__instruction">Type the following:</small>
+            <h1 class="container__word" id="word">&nbsp;</h1>
+            <input class="container__text" type="text" id="text" autocomplete="off" placeholder="Type the word here...">
+            <div class="end-container">
+                <h2 class="end-container__heading">Time ran out</h2>
+                <p class="end-container__score">Your final score is <span id="finalScore">0</span></p>
+                <button class="reload-btn" id="reload">Reload</button>
+            </div>
+        </div>
+
+        <script src="js/main.js"></script>
+    </body>
+
+</html>
