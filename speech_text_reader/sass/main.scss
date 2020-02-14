@@ -1,0 +1,214 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+    outline: #e9967a;
+}
+
+textarea {
+    resize: vertical;
+}
+
+$bp-huge: 80em;         // 1280px
+$bp-largest: 75em;     // 1200px
+$bp-large: 68.75em;    // 1100px
+$bp-medium: 56.25em;    // 900px
+$bp-small: 37.5em;     // 600px
+$bp-smallest: 31.25em;    // 500px
+
+@mixin respond($bp) {
+    @media only screen and (max-width: $bp) {
+        @content;
+    }
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+
+    @include respond($bp-medium) {
+        font-size: 56.25%;
+    }
+
+    @include respond($bp-small) {
+        font-size: 50%;
+    }
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #ffefea;
+    position: relative;
+}
+
+.curtain {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+    opacity: 0;
+    filter: blur(50px);
+    transition: all .35s ease;
+}
+
+.curtain.show {
+    z-index: 4;
+    opacity: 1;
+}
+
+.container {
+    padding: 0 3rem 3rem 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.heading {
+    margin: 2rem 0 2.5rem 0;
+    font-size: 3.2rem;
+    font-weight: 600;
+    text-shadow: 2px 6px 10px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.dropdown {
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    border: none;
+    background-color: #e9967a;
+    font-size: 1.6rem;
+    color: #f4f4f4;
+    cursor: pointer;
+    transition: all .25s ease-in;
+
+    &:hover {
+        box-shadow: 0px 6px 10px 2px rgba(0, 0, 0, 0.1);
+        padding: 1rem 3rem;
+    }
+
+    &::first-letter {
+        text-decoration: underline;
+    }
+}
+
+.text-box {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 25%;
+    transform: translateY(-200rem);
+    background-color: #333;
+    padding: 2rem;
+    width: 60rem;
+    border-radius: 5px;
+    color: #f4f4f4;
+    z-index: 4;
+    transition: all .5s ease;
+
+    @include respond($bp-small) {
+        width: 45rem;
+        top: 5%;
+    }
+
+    @include respond($bp-smallest) {
+        width: 35rem;
+    }
+
+    &__close {
+        background-color: transparent;
+        border: none;
+        color: #fff;
+        text-align: right;
+        font-size: 1.8rem;
+        cursor: pointer;
+    }
+
+    &__heading {
+        margin-bottom: 1rem;
+        font-size: 2rem;
+    }
+
+    &__voices {
+        margin-bottom: 2rem;
+        background-color: #e9967a;
+        border: none;
+        padding: 1rem .5rem;
+        color: #f4f4f4;
+    }
+
+    &__area {
+        margin-bottom: 1rem;
+        padding: 1rem;
+        border: none;
+        background-color: rgba(0, 0, 0, 0.15);
+        color: #f4f4f4;
+    }
+
+    &__read {
+        padding: 1rem 0;
+        background-color: #e9967a;
+        border: none;
+        color: #f4f4f4;
+        font-size: 2rem;
+        font-weight: 600;
+        cursor: pointer;
+    }
+}
+
+.text-box.show {
+    transform: translateY(0);
+}
+
+.samples {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2rem;
+    margin-top: 2.5rem;
+    width: 100%;
+
+    &__box {
+        width: 100%;
+        border-radius: 5px;
+        background-color: #e9967a;
+        cursor: pointer;
+        transition: all .25s ease;
+
+        &--img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+
+        &--p {
+            padding: 1rem 2rem;
+            text-align: center;
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            color: #f4f4f4;
+        }
+
+        &:hover {
+            box-shadow: 0px 6px 10px 5px rgba(0, 0, 0, 0.2);
+        }
+    }
+
+    @include respond($bp-medium) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include respond($bp-small) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond($bp-smallest) {
+        grid-template-columns: 1fr;
+    }
+}

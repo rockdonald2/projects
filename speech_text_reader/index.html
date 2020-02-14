@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+            content="width=device-width, initial-scale=1.0">
+        <title>Speech Text Reader</title>
+        <link rel="stylesheet"
+            href="css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap"
+            rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="curtain" id="curtain"></div>
+        <div class="container">
+            <h1 class="heading">Speech Text Reader</h1>
+            <button class="dropdown" id="open">Toggle Text Box</button>
+            <div class="text-box" id="textBox">
+                <button class="text-box__close" id="close">X</button>
+                <h2 class="text-box__heading">Choose voice</h2>
+                <select id="voices" class="text-box__voices">
+                    <option value="blank">blank</option>
+                </select>
+                <textarea id="text" class="text-box__area" cols="30" rows="10" placeholder="Enter your text to speech here..."></textarea>
+                <button id="read" class="text-box__read">Read Text</button>
+            </div>
+            <div class="samples">
+                <div class="samples__box">
+                    <img src="./img/drink.jpg" alt="I'm thirsty image" class="samples__box--img">
+                    <p class="samples__box--p">I'm thirsty</p>
+                </div>
+                <div class="samples__box">
+                    <img src="./img/food.jpg" alt="I'm hungry image" class="samples__box--img">
+                    <p class="samples__box--p">I'm hungry</p>
+                </div>
+                <div class="samples__box">
+                    <img src="./img/tired.jpg" alt="I'm tired image" class="samples__box--img">
+                    <p class="samples__box--p">I'm tired</p>
+                </div>
+                <div class="samples__box">
+                    <img src="./img/hurt.jpg" alt="I'm hurt image" class="samples__box--img">
+                    <p class="samples__box--p">I'm hurt</p>
+                </div>
+                <div class="samples__box">
+                    <img src="./img/happy.jpg" alt="I'm happy image" class="samples__box--img">
+                    <p class="samples__box--p">I'm happy</p>
+                </div>
+                <div class="samples__box">
+                    <img src="./img/angry.jpg" alt="I'm angry image" class="samples__box--img">
+                    <p class="samples__box--p">I'm angry</p>
+                </div>
+                <div class="samples__box">
+                    <img src="./img/sad.jpg" alt="I'm sad image" class="samples__box--img">
+                    <p class="samples__box--p">I'm sad</p>
+                </div>
+                <div class="samples__box">
+                    <img src="./img/scared.jpg" alt="I'm scared img" class="samples__box--img">
+                    <p class="samples__box--p">I'm scared</p>
+                </div>
+                <div class="samples__box">
+                    <img src="./img/outside.jpg" alt="Outside image" class="samples__box--img">
+                    <p class="samples__box--p">I want to go outside</p>
+                </div>
+                <div class="samples__box">
+                    <img src="./img/home.jpg" alt="Home image" class="samples__box--img">
+                    <p class="samples__box--p">I want to go home</p>
+                </div>
+                <div class="samples__box">
+                    <img src="./img/school.jpg" alt="School image" class="samples__box--img">
+                    <p class="samples__box--p">I want to go to school</p>
+                </div>
+                <div class="samples__box">
+                    <img src="./img/grandma.jpg" alt="Grandma image" class="samples__box--img">
+                    <p class="samples__box--p">I want to go to grandmas</p>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/main.js"></script>
+    </body>
+
+</html>
