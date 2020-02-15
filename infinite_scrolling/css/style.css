@@ -64,10 +64,11 @@ body {
     font-size: 1.6rem; }
 
 .loading {
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 5rem; }
+  margin-top: 5rem;
+  opacity: 0; }
   .loading span {
     width: 16px;
     height: 16px;
@@ -82,7 +83,7 @@ body {
       animation: bubbling .5s ease infinite alternate-reverse; }
 
 .loading.show {
-  display: flex; }
+  opacity: 1; }
 
 @keyframes bubbling {
   from {

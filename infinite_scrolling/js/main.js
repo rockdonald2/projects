@@ -36,7 +36,7 @@ function showLoading() {
         setTimeout(() => {
             page++;
             showPosts();
-        }, 500); 
+        }, 200); 
     }, 1000);
 }
 

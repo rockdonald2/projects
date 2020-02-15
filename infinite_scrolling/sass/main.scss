@@ -81,10 +81,11 @@ body {
 }
 
 .loading {
-    display: none;
+    display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 5rem;
+    opacity: 0;
 
     span {
         width: 16px;
@@ -109,7 +110,7 @@ body {
 }
 
 .loading.show {
-    display: flex;
+    opacity: 1;
 }
 
 @keyframes bubbling {
