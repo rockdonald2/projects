@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+            content="width=device-width, initial-scale=1.0">
+        <title>LyricsSearch App</title>
+        <link rel="stylesheet"
+            href="css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap"
+            rel="stylesheet">
+    </head>
+
+    <body>
+        <header class="header">
+            <h1 class="header__heading">LyricsSearch</h1>
+            <form class="header__form" id="form">
+                <input type="text"
+                    id="term"
+                    class="header__form--term"
+                    placeholder="Enter artist or song name...">
+                <button type="submit"
+                    class="header__form--submit"
+                    id="submit">Search</button>
+            </form>
+        </header>
+        <main class="app">
+            <div class="search-results">
+                <ul>
+                    
+                </ul>
+                <div class="search-results__more">
+                    <button class="search-results__more--prev" id="prev">Prev</button>
+                    <button class="search-results__more--next" id="next">Next</button>
+                </div>
+            </div>
+            <div class="lyrics" id="lyricsContainer">
+                <button class="lyrics--back" id="back">&larr;</button>
+                <h2 class="lyrics__song">
+                    <span class="lyrics__song--artist" id="lyricsArtist"></span> - <span id="lyricsSong"></span>
+                </h2>
+                <pre class="lyrics__text" id="lyricsText">
+                    
+                    </pre>
+            </div>
+        </main>
+
+        <script src="js/main.js"></script>
+    </body>
+
+</html>

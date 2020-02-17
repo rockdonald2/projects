@@ -1,0 +1,172 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+  outline: none; }
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box; }
+
+body {
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  overflow-y: hidden;
+  overflow-x: hidden; }
+
+body.show {
+  overflow-y: visible; }
+
+.header {
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: url(https://images.unsplash.com/photo-1510915361894-db8b60106cb1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80%27) center/cover;
+  box-shadow: inset 0px 0px 100px rgba(0, 0, 0, 0.9); }
+  .header__heading {
+    font-size: 3rem;
+    color: #f4f4f4;
+    margin-bottom: 2.5rem; }
+  .header__form {
+    display: flex;
+    width: 500px; }
+    .header__form--term {
+      width: 100%;
+      padding: 1.75rem 2rem;
+      border-radius: 100px;
+      border: none; }
+    .header__form--submit {
+      border: none;
+      border-radius: 50px;
+      padding: 0 2rem;
+      margin-top: .1rem;
+      margin-left: -8.3rem;
+      display: inline-block;
+      height: 48px;
+      background-color: #e056fd;
+      color: #f4f4f4;
+      cursor: pointer;
+      transition: all .25s ease;
+      font-weight: 500; }
+      .header__form--submit:active {
+        transform: scale(0.95); }
+      .header__form--submit:hover {
+        color: #e056fd;
+        background-color: #f4f4f4; }
+
+.app {
+  position: relative; }
+
+.search-results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: all .5s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 2.5rem 0; }
+  .search-results.show {
+    visibility: visible;
+    transform: translateX(0rem);
+    opacity: 1; }
+  .search-results ul {
+    list-style-type: none;
+    width: 50%; }
+    .search-results ul li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between; }
+      .search-results ul li:not(:last-of-type) {
+        margin-bottom: 1rem; }
+  .search-results__song {
+    font-size: 1.6rem;
+    font-weight: 400; }
+    .search-results__song--artist {
+      font-weight: 500; }
+  .search-results__get {
+    padding: .5rem 1rem;
+    border-radius: 50px;
+    border: none;
+    background-color: #e056fd;
+    color: #f4f4f4;
+    display: inline-block;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: all .25s ease; }
+    .search-results__get:hover {
+      color: #e056fd;
+      background-color: #f4f4f4; }
+    .search-results__get:active {
+      transform: scale(0.95); }
+  .search-results__more {
+    margin-top: 5rem; }
+    .search-results__more--next, .search-results__more--prev {
+      padding: .5rem 1rem;
+      border-radius: 50px;
+      border: none;
+      background-color: #e056fd;
+      color: #f4f4f4;
+      display: inline-block;
+      font-size: 1.6rem;
+      cursor: pointer;
+      transition: all .25s ease; }
+      .search-results__more--next:hover, .search-results__more--prev:hover {
+        color: #e056fd;
+        background-color: #f4f4f4; }
+      .search-results__more--next:active, .search-results__more--prev:active {
+        transform: scale(0.95); }
+    .search-results__more--prev {
+      margin-right: 2.5rem;
+      display: none; }
+
+.lyrics {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.5rem 0;
+  transform: translateX(100%);
+  opacity: 0;
+  transition: all .5s ease; }
+  .lyrics.show {
+    visibility: visible;
+    transform: translateX(0);
+    opacity: 1; }
+  .lyrics--back {
+    font-size: 3rem;
+    border: none;
+    background-color: transparent;
+    color: #e056fd;
+    cursor: pointer;
+    position: absolute;
+    top: 10rem;
+    left: 8rem;
+    z-index: 5;
+    padding: 1rem; }
+    .lyrics--back:active {
+      transform: scale(0.95); }
+  .lyrics__song {
+    font-size: 2.4rem;
+    font-weight: 400;
+    margin-bottom: 2.5rem;
+    width: 100%;
+    text-align: center;
+    padding: 0 2rem; }
+    .lyrics__song--artist {
+      font-weight: 500; }
+  .lyrics__text {
+    font-size: 1.6rem;
+    width: 100%;
+    text-align: center; }
