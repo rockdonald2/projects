@@ -1,0 +1,91 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box; }
+
+body {
+  font-family: 'Lato', sans-serif;
+  min-height: 100vh;
+  background: url("https://github.com/bradtraversy/vanillawebprojects/blob/master/relaxer-app/img/bg.jpg?raw=true") no-repeat center center/cover, #224941;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.header__heading {
+  font-size: 3rem;
+  text-align: center;
+  padding-top: 5rem; }
+
+.app {
+  width: 300px;
+  height: 300px;
+  margin: auto;
+  position: relative;
+  transform: scale(0.9); }
+  .app__circle {
+    background-color: #010f1c;
+    border-radius: 100%;
+    width: 100%;
+    height: 100%; }
+    .app__circle--gradient {
+      border-radius: 100%;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: -1rem;
+      left: -1rem;
+      width: 320px;
+      height: 320px;
+      background: conic-gradient(#55b7a4 0%, #4ca493 40%, #fff 40%, #fff 60%, #336d62 60%, #2a5b52 100%);
+      z-index: -1; }
+  .app__text {
+    color: #f4f4f4;
+    font-size: 2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+  .app__pointer {
+    width: 20px;
+    height: 190px;
+    position: absolute;
+    top: -40px;
+    left: 140px;
+    transform-origin: bottom center;
+    animation: rotate 7.5s linear forwards infinite;
+    padding-top: .5rem; }
+    .app__pointer--point {
+      display: block;
+      width: 20px;
+      height: 20px;
+      border-radius: 100%;
+      background-color: #f4f4f4; }
+
+.grow {
+  animation: grow 3s linear forwards; }
+
+.shrink {
+  animation: shrink 3s linear forwards; }
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg); } }
+
+@keyframes grow {
+  from {
+    transform: scale(0.9); }
+  to {
+    transform: scale(1.1); } }
+
+@keyframes shrink {
+  from {
+    transform: scale(1.1); }
+  to {
+    transform: scale(0.9); } }
