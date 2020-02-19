@@ -34,7 +34,7 @@ function updateCountdown() {
     daysElapsed += Number(today.getDate());
     days.innerText = yearDays - daysElapsed;
 
-    hours.innerText = `${(timeLeft.getHours() - 2) < 10 ? '0' + timeLeft.getHours() - 2 : timeLeft.getHours() - 2}`;
+    hours.innerText = `${(timeLeft.getHours() - 2) < 10 ? '0' + timeLeft.getHours() - 2 : timeLeft.getHours() - 2}`; // -2 because of the timezone
     minutes.innerText = `${(timeLeft.getMinutes()) < 10 ? '0' + timeLeft.getMinutes() : timeLeft.getMinutes()}`;
     seconds.innerText =`${(timeLeft.getSeconds()) < 10 ? '0' + timeLeft.getSeconds() : timeLeft.getSeconds()}`;
 }
